@@ -1,0 +1,17 @@
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		String str[]= {"flower","flow","flight"};
+		PrefixString(str);
+	}
+	
+	public static boolean PrefixString(String str[]) {
+		String str1="";
+	return Arrays.stream(str).anyMatch(str1::startsWith);
+		
+	}
+
+}

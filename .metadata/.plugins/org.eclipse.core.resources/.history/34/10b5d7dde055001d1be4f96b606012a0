@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		String str[]= {"flower","flow","flight"};
+		PrefixString(str);
+	}
+	
+	public static String PrefixString(String str[]) {
+		Arrays.sort(str);
+		String str1="";
+		char[] a=str[0].toCharArray();
+		char[] b=str[str.length-1].toCharArray();
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<a.length;i++) {
+			if(a[i]!=b[i]) 
+				break;
+				sb.append(a[i]);
+			
+		}
+		return sb.toString();
+			
+			
+		
+		return "";
+	 
+		
+	}
+
+}

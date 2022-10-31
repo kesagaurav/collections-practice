@@ -1,0 +1,13 @@
+import java.util.function.Consumer;
+
+public class Gaurav {
+
+	public static void main(String[] args) {
+
+		Consumer<Integer> consum=(t)->{
+			System.out.println("printing " + t);
+		};
+		consum.accept(10);
+	}
+
+}

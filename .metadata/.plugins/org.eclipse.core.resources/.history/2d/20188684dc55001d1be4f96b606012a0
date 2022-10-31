@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		String str[]= {"flower","flow","flight"};
+		PrefixString(str);
+	}
+	
+	public static String PrefixString(String str[]) {
+	String str1="";
+	boolean c;
+	for(int i=0;i<str.length-1;i++) {
+		if(str1.startsWith(str[i])==str1.startsWith(str[i+1])) {
+			c=true;
+		}
+	}
+	return "";
+		
+	}
+
+}

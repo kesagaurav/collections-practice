@@ -1,0 +1,48 @@
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		String str[]= {"flower","flow","flight"};
+		PrefixString(str);
+		String s="[}";
+		String len="hello world";
+	System.out.println(lengthOfLastWord(len));
+		
+	}
+	
+	public static String PrefixString(String str[]) {
+		Arrays.sort(str);
+		char[] a=str[0].toCharArray();
+		char[] b=str[str.length-1].toCharArray();
+		StringBuilder sb=new StringBuilder();
+		for(int i=0;i<a.length;i++) {
+			if(a[i]!=b[i]) 
+				break;
+				sb.append(a[i]);
+			
+		}
+		return sb.toString();
+	}
+		
+		public static boolean validParethesis(String s) {
+			for(int i=0;i<s.length();i++) {
+				if(s.startsWith("(")||s.startsWith("{")||s.startsWith("[")) {
+					return true;
+				}
+			}
+			return false;
+		
+			}
+		
+		
+		 public static int lengthOfLastWord(String s) {
+			 String s1[]=s.split("\\s");
+			 long counts= Arrays.stream(s1).map(a->a.length()-1).count();
+			 int count1=(int)counts;
+			 return count1;
+			 
+		    }
+
+}
