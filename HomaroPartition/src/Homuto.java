@@ -9,6 +9,14 @@ public class Homuto {
 		for (int x : a)
 			System.out.print(x + " ");
 	}
+	
+	public static void qSort(int a[],int l,int h) {
+		if(l<h) {
+			int p=HomutoPartiton(a, l, h);
+			qSort(a, l, p);
+			qSort(a, p+1, h);
+		}
+	}
 
 	public static int HomutoPartiton(int a[], int l, int h) {
 		int pivot = a[l];
