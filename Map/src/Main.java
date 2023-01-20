@@ -7,6 +7,7 @@ public class Main {
 		hmap.put("gaurav", 1);
 		HashSet<Integer> hset=new HashSet<>();
 		hset.add(1);
+		
 	}
 
 }
