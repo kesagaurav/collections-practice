@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 public class Main {
 
@@ -7,6 +8,22 @@ public class Main {
 		int[] R = { 15, 8, 12, 20, 30 };
 		int n = L.length;
 		System.out.println(maxAppear(L, R, n));
+		double a=-11;
+		double b=2;
+		System.out.println(Math.floor(a/b));
+		String c=Integer.toBinaryString((int) a);
+		System.out.println(c);
+		String hexString = Integer.toHexString((int) b);
+		System.out.println(hexString + " ");
+		String s="aab";
+		StringBuilder sb=new StringBuilder();
+		HashSet<Character> hs=new HashSet<>();
+		for(int i=0;i<s.length()-1;i++) {
+			if(s.charAt(i)==s.charAt(i+1)) {
+				s.replaceAll("i", "");
+				System.out.println(s.charAt(i));
+			}
+		}
 	}
 
 	
