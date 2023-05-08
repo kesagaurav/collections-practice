@@ -18,7 +18,8 @@ public class Main {
 		//System.out.println(tree.size(tree));
 		//System.out.println(tree.MaximumOfBinaryTree(tree));
 		//System.out.println(tree.sum(tree));
-		tree.left(tree);
+		//tree.left(tree);
+		System.out.println(tree.childrenSum(tree));
 
 		
 	}

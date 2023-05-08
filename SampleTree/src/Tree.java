@@ -182,4 +182,19 @@ public class Tree {
 			}
 		}
 	}
+	
+	
+	public static boolean childrenSum(Tree tree) {
+		if(tree==null) {
+			return true;
+		}
+		int sum=0;
+		if(tree.left!=null) {
+			sum+=tree.left.key;
+		}else if(tree.right!=null) {
+			sum+=tree.right.key;
+		}
+			return (tree.key==sum) && childrenSum(tree.left) && childrenSum(tree.right);
+		
+	}
 }
