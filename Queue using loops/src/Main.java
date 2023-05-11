@@ -10,10 +10,9 @@ public class Main {
 		queue.add(30);
 		System.out.println(queue.peek());
 		System.out.println(queue);
-		System.out.println(queue.poll());
+		System.out.println("first ele is " + queue.poll());
 		System.out.println(queue);
 		System.out.println(queue.peek());
-
 		int a = queue.size();
 		// System.out.println(queue.size());
 		/*
