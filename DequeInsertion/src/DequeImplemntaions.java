@@ -7,7 +7,7 @@ public class DequeImplemntaions {
 		ArrayDeque<Integer> de = new ArrayDeque<>();
 		push_front_pf(de, 5);
 		push_back_pb(de, 6);
-
+		
 	}
 
 	public static void push_back_pb(ArrayDeque<Integer> dq, int x) {
