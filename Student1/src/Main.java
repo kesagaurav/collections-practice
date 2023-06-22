@@ -19,6 +19,7 @@ public class Main {
 			List<Integer> val = entry.getValue();
 			System.out.println("key is " + key + "and value is " + val);
 		}
+		Map<Integer,Long> collect = stuList.stream().collect(Collectors.groupingBy(a->a.getMarks(),Collectors.mapping(a->a.getMarks(), Collectors.counting())));
 		
 		List<String> ab=new ArrayList<>();
 		ab.add("gaurav");

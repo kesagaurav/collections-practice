@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//String s="a+b*c+d";
-		String s="a+b*(c^d-e)^(f+g*h)-i";
+		String s="(A-B/C)*(A/K-L)";
 		System.out.println(infixToPostfix(s));
 		//abcd^e-fgh*+^*+i-
 	}
@@ -37,16 +37,16 @@ public class Main {
 		StringBuilder sb=new StringBuilder();
 		char ch=0;
 		ArrayDeque<Character> ar=new ArrayDeque<>();
-		for(int i=0;i<s.length();i++) {
+		for(int i=s.length()-1;i>=0;i--) {
 			 ch=s.charAt(i);
 			if(Character.isLetterOrDigit(ch)) {
 				sb.append(s.charAt(i));
 			}
 			
-			else if(s.charAt(i)=='(') {
+			else if(s.charAt(i)==')') {
 				ar.push(ch);
 			}
-			else if(ch==')') {
+			else if(ch=='(') {
 				while(!ar.isEmpty()&&ar.peek()!='(') {
 				sb.append(ar.peek());
 				ar.pop();
@@ -56,18 +56,24 @@ public class Main {
 			
 			
 			else {
+				while(!ar.isEmpty() && prec(ch)>=prec(ar.peek())) {
+					ar.push(s.charAt(i));
+				}
 				while(!ar.isEmpty() && prec(ch)<=prec(ar.peek())) {
 					sb.append(ar.peek());
 					ar.pop();
 				}
 				ar.push(ch);
 			}
+			
+			
 		}
+		
 		while(!ar.isEmpty()) {
 			sb.append(ar.peek());
 			ar.pop();
 		}
-		return sb.toString();
+		return sb.reverse().toString();
 	}
 
 }
