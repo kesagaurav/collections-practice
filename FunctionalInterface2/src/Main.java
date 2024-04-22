@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -22,19 +24,28 @@ public class Main {
 
 		});
 		System.out.println(busList);
-		
-		busList.stream().filter(a->a.getTravelName().contains("orangetravels")).forEach(e->System.out.println(e));
-		long count=busList.stream().filter(a->a.getTravelName().contains("morningstartravels")).count();
+
+		busList.stream().filter(a -> a.getTravelName().contains("orangetravels")).forEach(e -> System.out.println(e));
+		long count = busList.stream().filter(a -> a.getTravelName().contains("morningstartravels")).count();
 		System.out.println(count);
-		busList.stream().filter(a->a.getTravelName().contains("orangetravels")).map(a->a.getAmount()).forEach(e->System.out.println(e));
-		Map<String,Double> hm=busList.stream().collect(Collectors.toMap(a->a.getPassName(), a->a.getAmount()));
+		busList.stream().filter(a -> a.getTravelName().contains("orangetravels")).map(a -> a.getAmount())
+				.forEach(e -> System.out.println(e));
+		Map<String, Double> hm = busList.stream().collect(Collectors.toMap(a -> a.getPassName(), a -> a.getAmount()));
 		System.out.println(hm);
 		System.out.println("list without orange travels");
-		busList.stream().filter(a->!a.getTravelName().contains("orangetravels")).forEach(e->System.out.println(e));
-		
-		HashMap<Integer,Integer> hm1=new HashMap<>();
+		busList.stream().filter(a -> !a.getTravelName().contains("orangetravels")).forEach(e -> System.out.println(e));
+
+		HashMap<Integer, Integer> hm1 = new HashMap<>();
 		hm1.put(1, 1);
-		System.out.println(busList.stream().collect(Collectors.groupingBy(a->a.getPassName(), Collectors.mapping(a->a.getTravelName(), Collectors.toList()))));
+		System.out.println(busList.stream().collect(Collectors.groupingBy(a -> a.getPassName(),
+				Collectors.mapping(a -> a.getTravelName(), Collectors.toList()))));
+		boolean match = busList.stream().anyMatch(a -> a.getTravelName().contains("orangetravels"));
+		System.out.println(match);
+		boolean allMatch = busList.stream().allMatch(a -> a.getTravelName().contains("orangetravels"));
+		System.out.println(allMatch);
+		busList.stream().filter(a->a.getTravelName().contains("orangetravles")).distinct().forEach(e->System.out.println(e));
+		
+
 	}
 
 }
