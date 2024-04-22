@@ -1,10 +1,17 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
@@ -44,17 +51,65 @@ public class Main {
 		System.out.println(id.test(e));
 		Function<Integer, String> f1 = x -> x * 10 + " i am ok ";
 		System.out.println(f1.apply(200));
-		Sample s3=()->{
+		Sample s3 = () -> {
 			System.out.println("this is show method");
 		};
 		s3.show();
-		ArrayList<Integer> list=new ArrayList<>();
+		ArrayList<Integer> list = new ArrayList<>();
 		list.add(1);
 		list.add(2);
 		list.add(3);
-		list.stream().map(a->a*10).collect(Collectors.toList());
+		list.stream().map(a -> a * 10).collect(Collectors.toList());
 		System.out.println(list);
+
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		hm.put(1, 1);
+		hm.put(null, null);
+		hm.put(2, 2);
+		// hm.put(null, 2);
+		System.out.println(hm);
+
+		Map<Integer, Integer> tm = new TreeMap<>(Collections.reverseOrder());
+		tm.put(1, 1);
+		// tm.put(null, null);//in treemap key cannot be null and values can be null
+		tm.put(2, 2);
+		tm.put(3, null);
+		tm.put(4, null);
+		System.out.println(tm);
+		System.out.println(" keys is " + tm.keySet());
+		System.out.println(" value is " + tm.values());
+		System.out.println("iterating using hashset()");
+		Set<Integer> set = tm.keySet();
+		for (Integer integer : set) {
+			System.out.println("key is " + integer + " and value is  " + tm.get(integer));
+		}
+		Set<Integer> ste2 = new HashSet<>();
+		ste2.add(2);
+		Map<Integer, Integer> hm1 = new HashMap<>();
+		hm1.put(10, 10);
+		hm1.put(3, 3);
+		hm1.put(98, 98);
+		hm1.put(null, 2);
+		hm1.put(76, null);
+//		for (Map.Entry<Integer, Integer> entry : hm1.entrySet()) {
+//			if (entry.getKey() == null || entry.getValue() == null || entry.getKey() % 10 == 0) {
+//				hm1.remove(entry.getKey());
+//			}
+//
+//		}
+		System.out.println(hm);
+		Iterator<Entry<Integer, Integer>> it = hm1.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<Integer, Integer> map = it.next();//read and post increment
+			if (map.getKey() == null || map.getValue() == null || map.getKey() % 10 == 0) {
+				it.remove();
+			}
+
+		}
+		System.out.println(hm1);
+		
+		
+
 	}
 
 }
-
