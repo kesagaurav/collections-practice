@@ -108,6 +108,14 @@ public class Main {
 		}
 		System.out.println(hm1);
 		
+		String s31="gaurav";
+		ArrayList<String> st=new ArrayList<>(s31.length());
+		for(int i=0;i<st.size();i++) {
+//			if(st.get(i).charAt(i)=='a' || st.get(i).charAt(i)=='e' || st.get(i).charAt(i)=='i' || st.get(i).charAt(i)=='o' || st.get(i).charAt(i)=='u') {
+//				System.out.println(st.get(i).charAt(i));
+//			}
+			System.out.println(st.get(i).charAt(i));
+		}
 		
 
 	}
