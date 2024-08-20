@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -51,7 +53,20 @@ public class Main {
 
 		GenericClass<Boolean> gBool=new GenericClass<Boolean>(true);
 		System.out.println(gBool.getValue());
+		
+		List<Double> list=Arrays.asList(1.0,2.2,3.3);
+		add(list);
 
+	}
+	
+	static void add(List<? extends Number> list) {
+		double d=0;
+		for(Number d1:list) {
+			d+=d1.doubleValue();
+			
+		}
 	}
 
 }
+
+
