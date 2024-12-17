@@ -137,6 +137,16 @@ public class Main {
 		Optional<String> findLast = list1.stream().findAny().filter(a->a.contains("k"));
 		System.out.println(findLast);
 		
-
+		List<Employee> list2 = list;
+		Integer collect3 = list2.stream().collect(Collectors.summingInt(a->(int)a.getAmount()));
+		System.out.println("sum is " + collect3);
+		
+		Integer collect4=list.stream().collect(Collectors.summingInt(a->a.getId()));
+		System.out.println(collect4);
+		
+		List<Integer> list4=Arrays.asList(1,2,3,4,5,6,7,8);
+		Integer findFirst2 = list4.stream().mapToInt(Integer::intValue).sum();
+		System.out.println("find first is " + findFirst2);
+		
 	}
 }
