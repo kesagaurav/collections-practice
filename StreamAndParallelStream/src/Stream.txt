@@ -1,0 +1,10 @@
+stream								 	parallel stream						
+Runs on a single-core of the computer	Utilize the multiple cores of the computer. 
+Performance is poor						The performance is high.
+Order is maintained						Doesn’t care about the order,
+Only a single iteration at a time just   Operates multiple iterations simultaneously in different available cores.
+like the for-loop. 	
+Each iteration waits for currently running    	Waits only if no cores are free or available at a given time,
+ one to finish 
+More reliable and less error,				Less reliable and error-prone. 
+Platform independent,						Platform dependent
