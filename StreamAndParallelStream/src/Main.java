@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -56,6 +57,8 @@ public class Main {
 		
 		//the main diff in stream and parallel stream is that stream will work in order way
 		//where parallel stream will be give o/p has undorder.
+		
+		list.parallelStream().collect(Collectors.toList()).forEach(e->System.out.println(e));
 	}
 
 }
