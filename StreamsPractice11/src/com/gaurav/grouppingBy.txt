@@ -1,0 +1,6 @@
+classifier: A Function that takes an element of type T and returns a key of type K. 
+This function determines how elements are grouped.
+mapFactory: A Supplier that provides a new instance of the Map to be used for storing the grouped elements. 
+This allows for customization of the map implementation (e.g., using a TreeMap for sorted keys).
+downstream: A Collector that is applied to the elements within each group. 
+This collector determines how the elements within a group are processed (e.g., collecting them into a list, calculating their sum, etc.).
